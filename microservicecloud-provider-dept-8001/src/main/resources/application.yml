@@ -20,4 +20,9 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
-   
+eureka: 
+      client:   #客户端注册金eureka-server服务列表内
+        service-url:
+          defaultZone: http://localhost:7001/eureka
+      instance:
+        instance-id: microservicecloud-dept8001
