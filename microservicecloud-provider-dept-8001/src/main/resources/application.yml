@@ -27,3 +27,9 @@ eureka:
       instance:
         instance-id: microservicecloud-dept8001
         prefer-ip-address: true
+info:
+  app.name: tanghailin-microservicecloud
+  company.name: www.tanghailin.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
