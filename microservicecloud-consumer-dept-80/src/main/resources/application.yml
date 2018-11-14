@@ -1,2 +1,2 @@
 server:
-  port: 80
+  port: 8888        #因为google浏览器占用了80端口，用8888替代

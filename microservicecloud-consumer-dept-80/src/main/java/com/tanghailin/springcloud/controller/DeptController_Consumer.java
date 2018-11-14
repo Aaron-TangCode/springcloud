@@ -15,17 +15,26 @@ public class DeptController_Consumer {
 	public static final String URL_PREFIX = "http://localhost:8001";
 	@Autowired
 	private RestTemplate restTemplate;
-	@RequestMapping(value="/consumer/dept/add")
+
+	@RequestMapping(value = "/consumer/dept/add")
 	public boolean add(Dept dept) {
-		return restTemplate.postForObject(URL_PREFIX+"/dept/add", dept, Boolean.class);
+		return restTemplate.postForObject(URL_PREFIX + "/dept/add", dept, Boolean.class);
 	}
-	@RequestMapping(value="/consumer/dept/get/{id}")
+
+	@RequestMapping(value = "/consumer/dept/get/{id}")
 	public Dept get(@PathVariable("id") Long id) {
-		return restTemplate.getForObject(URL_PREFIX+"/dept/get/"+id, Dept.class);
+		return restTemplate.getForObject(URL_PREFIX + "/dept/get/" + id, Dept.class);
 	}
+
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value="/consumer/dept/list")
-	public List<Dept> list(){
-		return restTemplate.getForObject(URL_PREFIX+"dept/list", List.class);
+	@RequestMapping(value = "/consumer/dept/list")
+	public List<Dept> list() {
+		return restTemplate.getForObject(URL_PREFIX + "dept/list", List.class);
+	}
+
+	// 测试@EnableDiscoveryClient,消费端可以调用服务发现
+	@RequestMapping(value = "/consumer/dept/discovery")
+	public Object discovery() {
+		return restTemplate.getForObject(URL_PREFIX + "/dept/discovery", Object.class);
 	}
 }

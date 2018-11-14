@@ -38,7 +38,5 @@ public class Dept implements Serializable {
 		this.db_source = db_source;
 	}
 
-	public static void main(String[] args) {
-		System.out.println("test springcloud");
-	}
+	
 }
