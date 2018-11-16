@@ -12,7 +12,9 @@ import com.tanghailin.springcloud.entities.Dept;
 
 @RestController
 public class DeptController_Consumer {
-	public static final String URL_PREFIX = "http://localhost:8001";
+	//public static final String URL_PREFIX = "http://localhost:8001";
+	
+	public static final String URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 	@Autowired
 	private RestTemplate restTemplate;
 
@@ -29,7 +31,7 @@ public class DeptController_Consumer {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/consumer/dept/list")
 	public List<Dept> list() {
-		return restTemplate.getForObject(URL_PREFIX + "dept/list", List.class);
+		return restTemplate.getForObject(URL_PREFIX + "/dept/list", List.class);
 	}
 
 	// 测试@EnableDiscoveryClient,消费端可以调用服务发现
