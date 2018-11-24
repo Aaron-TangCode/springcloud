@@ -21,8 +21,8 @@ public class ConfigBean {
 //	public IRule getRule() {
 //		return new RandomRule();
 //	}
-	@Bean//负载均衡（轮询算法）
-	public IRule getRule2() {
-		return new RoundRobinRule();
-	}
+//	@Bean//负载均衡（轮询算法）
+//	public IRule getRule2() {
+//		return new RoundRobinRule();
+//	}
 }
